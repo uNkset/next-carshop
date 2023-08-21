@@ -6,3 +6,12 @@ export interface CustomButtonProps {
   customStyles?: string
   handleClick?: MouseEventHandler<HTMLButtonElement>
 }
+
+export interface SearchManufacturerProps {
+  manufacturer: string
+  setManufacturer: (manufacturer: string) => void
+}
+
+export interface CustomFilterProps {
+  title: string
+}
