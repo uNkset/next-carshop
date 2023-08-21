@@ -20,13 +20,20 @@ const Hero = () => {
 
         <CustomButton
           title="Explore Cars"
+          btnType="button"
           customStyles="bg-primary-blue text-white rounded-full mt-10"
           handleClick={handleScroll}
         />
       </div>
       <div className="hero__image-container">
         <div className="hero__image">
-          <Image src="/hero.png" alt="hero" objectFit="contain" fill />
+          <Image
+            src="/hero.png"
+            alt="hero"
+            className="object-contain"
+            fill
+            priority
+          />
           <div className="hero__image-overlay" />
         </div>
       </div>
