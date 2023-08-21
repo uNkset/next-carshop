@@ -34,8 +34,8 @@ const Hero = () => {
             fill
             priority
           />
-          <div className="hero__image-overlay" />
         </div>
+        <div className="hero__image-overlay" />
       </div>
     </div>
   )
