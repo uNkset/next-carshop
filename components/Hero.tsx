@@ -7,7 +7,7 @@ const Hero = () => {
   const handleScroll = () => {}
 
   return (
-    <div className="hero">
+    <section className="hero">
       <div className="flex-1 pt-36 padding-x">
         <h1 className="hero__title">
           Your best way to find, book, or rent a car — safe your time and
@@ -37,7 +37,7 @@ const Hero = () => {
         </div>
         <div className="hero__image-overlay" />
       </div>
-    </div>
+    </section>
   )
 }
 
