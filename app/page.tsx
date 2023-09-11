@@ -1,6 +1,8 @@
 import { CarCard, CustomFilter, Hero, SearchBar } from '@components'
 import { fetchCars } from '@utils'
 
+//outer.push(newPathName, { scroll: false });
+
 export default async function Home() {
   const carList = await fetchCars()
 
@@ -29,7 +31,7 @@ export default async function Home() {
           <section>
             <div className="home__cars-wrapper">
               {carList.map((car, i) => (
-                <CarCard key={i} car={car} />
+                <CarCard key={`car-${i}`} car={car} />
               ))}
             </div>
           </section>
