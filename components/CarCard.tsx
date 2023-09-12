@@ -37,6 +37,7 @@ const CarCard = ({ car }: CarCardProps) => {
           src={generateCarImageUrl(car)}
           alt="car pic"
           fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
           priority
           className="object-contain"
         />
@@ -60,7 +61,7 @@ const CarCard = ({ car }: CarCardProps) => {
             <p className="text-[14px]">{drive.toLocaleUpperCase()}</p>
           </div>
           <div className="flex flex-col justify-center items-center gap-2">
-            <Image src="/gas.svg" alt="gas" width={20} height={20} />
+            <Image src="/gas.svg" alt="gas" height={24} width={22} />
             <p className="text-[14px]">{city_mpg} MPG</p>
           </div>
         </div>
