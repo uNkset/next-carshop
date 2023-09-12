@@ -14,7 +14,7 @@ const CustomButton = ({
 }: CustomButtonProps) => {
   return (
     <button
-      disabled={false}
+      disabled={isDisabled}
       type={btnType || 'button'}
       className={`custom-btn ${customStyles}`}
       onClick={handleClick}
@@ -26,6 +26,7 @@ const CustomButton = ({
             src={rightIcon}
             alt="right icon"
             fill
+            sizes="24px"
             className="object-contain"
           />
         </div>
