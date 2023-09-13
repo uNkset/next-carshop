@@ -2,33 +2,24 @@
 
 import { Fragment, useState } from 'react'
 import Image from 'next/image'
-import { useRouter } from 'next/navigation'
 import { Listbox, Transition } from '@headlessui/react'
 import { CustomFilterProps } from '@types'
-import { updateSearchParams } from '@utils'
 
-const CustomFilter = ({ title, options }: CustomFilterProps) => {
-  const [seleceted, setSeleceted] = useState(options[0])
-  const router = useRouter()
-
-  const handleUpdateParams = (e: { title: string; value: string }) => {
-    const newPathname = updateSearchParams(title, e.value)
-
-    router.push(newPathname, { scroll: false })
-  }
+const CustomFilter = ({ options, setFilter }: CustomFilterProps) => {
+  const [menu, setMenu] = useState(options[0])
 
   return (
     <div className="w-fit">
       <Listbox
-        value={seleceted}
+        value={menu}
         onChange={(e) => {
-          setSeleceted(e)
-          handleUpdateParams(e)
+          setMenu(e)
+          setFilter(e.value)
         }}
       >
         <div className="relative w-fit z-10">
           <Listbox.Button className="custom-filter__btn">
-            <span className="block truncate">{seleceted.title}</span>
+            <span className="block truncate">{menu.title}</span>
             <Image
               src="/chevron-up-down.svg"
               width={20}

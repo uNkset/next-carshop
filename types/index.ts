@@ -1,5 +1,11 @@
-import { ShowMore } from '@components'
 import { MouseEventHandler } from 'react'
+
+export type CarState = CarProps[] & { message?: string }
+
+export interface SearchBarProps {
+  setManufacturer: (manufacturer: string) => void
+  setModel: (model: string) => void
+}
 
 export interface CustomButtonProps {
   title: string
@@ -12,8 +18,8 @@ export interface CustomButtonProps {
 }
 
 export interface SearchManufacturerProps {
-  manufacturer: string
-  setManufacturer: (manufacturer: string) => void
+  selected: string
+  setSelected: (selected: string) => void
 }
 
 export interface OptionsProps {
@@ -22,8 +28,8 @@ export interface OptionsProps {
 }
 
 export interface CustomFilterProps {
-  title: string
   options: OptionsProps[]
+  setFilter: ((selected: string) => void) | ((selected: number) => void)
 }
 
 export interface CarProps {
@@ -49,11 +55,8 @@ export interface FilterProps {
   fuel?: string
 }
 
-export interface HomeProps {
-  searchParams: FilterProps
-}
-
 export interface ShowMoreProps {
   pageNumber: number
   isNextPage: boolean
+  setLimit: (limit: number) => void
 }
